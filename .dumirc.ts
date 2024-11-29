@@ -1,6 +1,8 @@
 import { defineConfig } from 'dumi';
 
 export default defineConfig({
+  base: '/like-harmony-ui/',
+  publicPath: '/like-harmony-ui/',
   outputPath: 'docs-dist',
   themeConfig: {
     name: 'LikeHarmonyUI',

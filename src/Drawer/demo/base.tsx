@@ -15,11 +15,8 @@ export default () => {
   return (
     <>
       <Button onClick={changeOpen}>打开body抽屉</Button> &nbsp;
-      {/* <Button onClick={() => console.log(custParent)}>打开cust抽屉</Button> &nbsp; */}
       <Button onClick={changeOpen1}>打开cust抽屉</Button> &nbsp;
-      <div ref={custParent} style={{width: 200, height: 400, background: '#f0f'}}>
-
-      </div>
+      <div ref={custParent}></div>
       <Drawer
         visible={isOpen}
         onClose={() => setIsOpen(false)}
@@ -27,7 +24,7 @@ export default () => {
       <Drawer
         visible={isOpen1}
         onClose={() => setIsOpen1(false)}
-        inBody={custParent.current}
+        inBody={custParent.current!}
       />
     </>
   );
