@@ -17,7 +17,7 @@
     "lint:css": "stylelint \"{src,test}/**/*.{css,less}\"",
     "lint:es": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
     "prepublishOnly": "father doctor && npm run build",
-    "deploy": "scp -r ./dist/* root@47.92.209.78:/data/like-harmony-ui/"
+    "deploy": "scp -r ./docs-dist/* root@47.92.209.78:/data/like-harmony-ui/"
   },
   "authors": [
     "ldh"
