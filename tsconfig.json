@@ -8,9 +8,9 @@
     "baseUrl": "./",
     "paths": {
       "@@/*": [".dumi/tmp/*"],
-      "LikeHarmonyUI": ["src"],
-      "LikeHarmonyUI/*": ["src/*", "*"]
+      "like-harmony-ui": ["src"],
+      "like-harmony-ui/*": ["src/*", "*"]
     }
   },
-  "include": [".dumirc.ts", "src/**/*"]
+  "include": [".dumirc.ts", "src/**/*", "typed-css.d.ts"]
 }

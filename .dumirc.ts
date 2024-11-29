@@ -6,8 +6,8 @@ export default defineConfig({
     name: 'LikeHarmonyUI',
     nav: [
       { title: '组件', link: '/components/Button' }, // components会默认自动对应到src文件夹
-      { title: '指南', link: '/guide' },
-      { title: '作者介绍', link: '/guide' },
+      // { title: '指南', link: '/guide' },
+      // { title: '作者介绍', link: '/guide2' },
     ],
   },
   styles: [

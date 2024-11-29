@@ -5,6 +5,7 @@ export interface ButtonProps {
   type?: 'primary' | 'default';
   /** 按钮文字 */
   children?: React.ReactNode;
+  /** 回调方法 */
   onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 

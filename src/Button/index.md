@@ -11,7 +11,7 @@ group: # 分组
 
 ## 介绍
 
-基础的按钮组件 Button。
+基础的按钮组件 Button。入门组件案例，熟悉props，children，回调函数。
 
 ## 示例 
 
@@ -23,4 +23,5 @@ group: # 分组
 <!-- 会生成api表格 -->
 | 属性 | 类型                   | 默认值   | 必填 | 说明 |
 | ---- | ---------------------- | -------- | ---- | ---- |
-| type | 'primary' | 'default' | 'default |  false  | 按钮类型 |
+| type | primary、default | default |  false  | 按钮类型 |
+| onClick | function | null |  false  | 按钮事件 |
