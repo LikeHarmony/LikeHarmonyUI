@@ -1,54 +1,5 @@
-.drawerWarp {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100vh;
+.virtualWarp {
   overflow: hidden;
-  .drawerMask {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    transition: all 0.3s;
-  }
-
-  .drawerContent {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    right: 0;
-    // padding: 16px;
-    background-color: #fff;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    transform: translateX(100%);
-    transition: transform 0.3s;
-    // transition: all 0.3s;
-    .titleDrawer {
-      padding: 16px;
-      color: #000000d9;
-      font-weight: 500;
-      font-size: 16px;
-      border-bottom: 1px solid #f0f0f0;
-    }
-    .closeDrawerBtn {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      padding-left: 16px;
-      color: #ccc;
-      font-size: 16px;
-      cursor: pointer;
-
-    }
-  }
-  .drawerContent.active {
-    transform: translateX(0);
-  }
-  // .closeDrawer {
-  //   transform: translateX(100%);
-  // }
 }
 
 

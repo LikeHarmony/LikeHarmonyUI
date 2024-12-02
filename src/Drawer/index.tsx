@@ -58,8 +58,10 @@ const Drawer: React.FC<Partial<Iprops>> = (props) => {
   // 点击弹框关闭
   const handleClose = () => {
     if (contentRef.current && maskRef.current) {
-      contentRef.current.style.transform = 'translateX(100%)';
-      maskRef.current.style.backgroundColor= 'rgba(0,0,0,0)';
+      let constent: any = contentRef.current
+      let mask: any = maskRef.current
+      constent.style.transform = 'translateX(100%)';
+      mask.style.backgroundColor= 'rgba(0,0,0,0)';
     }
     setTimeout(() => {
       setDrawerVisible((prev) => {

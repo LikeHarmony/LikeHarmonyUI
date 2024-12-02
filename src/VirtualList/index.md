@@ -1,25 +1,25 @@
 ---
 category: Components
-title: Drawer 抽屉 # 组件的标题，会在菜单侧边栏展示
+title: VirtualList 虚拟列表 # 组件的标题，会在菜单侧边栏展示
 toc: content # 在页面右侧展示锚点链接
 group: # 分组
   title: 基础组件 # 所在分组的名称
   order: 1 # 分组排序，值越小越靠前
 ---
 
-# Drawer 抽屉
+# VirtualList 虚拟列表
 
 ## 介绍
 
-基础抽屉组件 Drawer。
+虚拟列表组件 VirtualList
 
 技术点：
 
-  1.调用 createPortal 创建 portal，并传入 JSX 与实际渲染的目标 DOM 节点
+  1.布局：外壳overflowY、填充maxLength、内容absolute
 
-  2.通过clearContentDom标记销毁children元素
+  2.计算公式待补充
 
-  3.todo 使用 addEventListener("animationend", (event) => {}); 去控制关闭时的动画
+  3.https://juejin.cn/post/7232856799170805820
 
 ## 示例 
 
