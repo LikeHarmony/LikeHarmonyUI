@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styles from './styles/index.module.less';
 
 interface IpropsVirtual {
@@ -6,16 +6,14 @@ interface IpropsVirtual {
   itemHeight: number;
   dataSource: any[];
 }
-type Iprops = IpropsVirtual;
 
-const List: React.FC<Partial<Iprops>> = (props) => {
+const List: React.FC<Partial<IpropsVirtual>> = (props) => {
   const {
     height = 200,
     itemHeight = 20,
-    dataSource = [1,2,3,4,5,6,7,8,9,0]
+    dataSource = []
   } = props
   const [startIndex, setStartIndex] = useState(0)
-  const warpRef = useRef(null)
 
   const scrollHandle = (event:any) => {
     const { scrollTop } = event.currentTarget;
@@ -23,25 +21,29 @@ const List: React.FC<Partial<Iprops>> = (props) => {
   }
 
   return (
-    <>
-      <span>{startIndex}</span>
-      <div ref={warpRef} onScroll={scrollHandle}className={styles.virtualWarp} style={{height: height}}>
-        <div
-          className={styles.virtualContent}
-          style={{height: dataSource.length * itemHeight}}
-        >
-          <div className={styles.virtualFix} style={{top: (startIndex ) * itemHeight}}>
-            {dataSource.slice(startIndex, startIndex + Math.ceil(height / itemHeight)).map((_v, i) => {
-              return (
-                <div key={_v.value} className="virtual-item" style={{height: itemHeight}}>
-                  {_v.name}
-                </div>
-              );
-            })}
-          </div>
+    // 滚动框组件用来监听滚动事件，并计算index起始索引
+    <div
+      onScroll={scrollHandle}
+      className={styles.virtualWarp}
+      style={{height: height}}
+    >
+      {/* 撑开滚动组件，不能设置relative定位 */}
+      <div
+        className={styles.virtualContent}
+        style={{height: dataSource.length * itemHeight}}
+      >
+        {/* absolute定位展示区位置 */}
+        <div className={styles.virtualFix} style={{top: (startIndex ) * itemHeight - (startIndex < 3 ? startIndex * 20 : 60)}}>
+          {dataSource.slice(startIndex < 3 ? 0 : startIndex - 3, startIndex + Math.ceil(height / itemHeight) + 3).map((_v, i) => {
+            return (
+              <div key={_v.value} className="virtual-item" style={{height: itemHeight}}>
+                {_v.name}
+              </div>
+            );
+          })}
         </div>
       </div>
-    </>
+    </div>
   )
 };
 
