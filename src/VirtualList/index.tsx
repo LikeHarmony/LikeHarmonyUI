@@ -33,8 +33,8 @@ const List: React.FC<Partial<IpropsVirtual>> = (props) => {
         style={{height: dataSource.length * itemHeight}}
       >
         {/* absolute定位展示区位置 */}
-        <div className={styles.virtualFix} style={{top: (startIndex ) * itemHeight - (startIndex < 3 ? startIndex * 20 : 60)}}>
-          {dataSource.slice(startIndex < 3 ? 0 : startIndex - 3, startIndex + Math.ceil(height / itemHeight) + 3).map((_v, i) => {
+        <div className={styles.virtualFix} style={{top: startIndex  * itemHeight - (startIndex < 3 ? startIndex * 20 : 60)}}>
+          {dataSource.slice(Math.max(0, startIndex - 3), startIndex + Math.ceil(height / itemHeight) + 3).map((_v, i) => {
             return (
               <div key={_v.value} className="virtual-item" style={{height: itemHeight}}>
                 {_v.name}
